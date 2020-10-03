@@ -1,0 +1,127 @@
+{
+	"_version": "1.8.0",
+	"sap.app": {
+		"id": "nl.henrystuifzand.ed.Eredivisie",
+		"type": "application",
+		"i18n": "i18n/i18n.properties",
+		"applicationVersion": {
+			"version": "1.0.0"
+		},
+		"title": "{{appTitle}}",
+		"description": "{{appDescription}}",
+		"sourceTemplate": {
+			"id": "ui5template.basicSAPUI5ApplicationProject",
+			"version": "1.40.12"
+		}
+	},
+	"sap.ui": {
+		"technology": "UI5",
+		"icons": {
+			"icon": "sap-icon://soccor",
+			"favIcon": "img/favicon.ico",
+			"phone": "",
+			"phone@2": "",
+			"tablet": "",
+			"tablet@2": ""
+		},
+		"deviceTypes": {
+			"desktop": true,
+			"tablet": true,
+			"phone": true
+		},
+		"supportedThemes": ["sap_hcb", "sap_belize"]
+	},
+	"sap.ui5": {
+		"rootView": {
+			"viewName": "nl.henrystuifzand.ed.Eredivisie.view.App",
+			"type": "XML"
+		},
+		"dependencies": {
+			"minUI5Version": "1.60.1",
+			"libs": {
+				"sap.ui.layout": {},
+				"sap.ui.core": {},
+				"sap.m": {}
+			}
+		},
+		"contentDensities": {
+			"compact": true,
+			"cozy": true
+		},
+		"models": {
+			"i18n": {
+				"type": "sap.ui.model.resource.ResourceModel",
+				"settings": {
+					"bundleName": "nl.henrystuifzand.ed.Eredivisie.i18n.i18n",
+					"locale": "nl"
+				}
+			},
+			"teams": {
+				"type": "sap.ui.model.json.JSONModel",
+				"settings": {},
+				"uri": "/destinations/fb02/competitions/2003/teams",
+				"preload": true
+			},
+			"standings": {
+				"type": "sap.ui.model.json.JSONModel",
+				"settings": {},
+				"uri": "/destinations/fb02/competitions/2003/standings",
+				"preload": true
+			},
+			"matches": {
+				"type": "sap.ui.model.json.JSONModel",
+				"settings": {},
+				"uri": "/destinations/fb02/competitions/2003/matches",
+				"preload": true
+			}
+		},
+		"resources": {
+			"css": [{
+				"uri": "css/style.css"
+			}]
+		},
+		"routing": {
+			"config": {
+				"routerClass": "sap.m.routing.Router",
+				"viewType": "XML",
+				"async": true,
+				"viewPath": "nl.henrystuifzand.ed.Eredivisie.view",
+				"controlAggregation": "pages",
+				"controlId": "idApp",
+				"clearControlAggregation": false,
+				"bypassed": {
+					"target": ["NotFound"]
+				}
+			},
+			"routes": [{
+				"name": "appMain",
+				"pattern": "",
+				"target": "Main"
+			}, {
+				"name": "detail",
+				"pattern": "detail/{teamId}",
+				"target": "Detail"
+			}],
+			"targets": {
+				"Main": {
+					"viewType": "XML",
+					"viewName": "Main",
+					"viewId": "main",
+					"viewLevel": 1
+				},
+				"NotFound": {
+					"viewType": "XML",
+					"viewName": "NotFound"
+				},
+				"Detail": {
+					"viewType": "XML",
+					"viewName": "Detail"
+				}
+			}
+		}
+	},
+	"sap.platform.hcp": {
+		"uri": "webapp",
+		"_version": "1.1.0"
+	}
+}

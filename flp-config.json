@@ -1,0 +1,35 @@
+{
+    "application": {
+        "id": "",
+        "title": "Eredivisie 2018/2019",
+        "description": "Eredivisie overzicht seizoen 2018/2019",
+        "type": "SAP_UI5_Component",
+        "componentUrl": "/dist",
+        "appUrl": "#Eredivisie-Display",
+        "navigationComponentName": "nl.henrystuifzand.ed.Eredivisie",
+        "intentSemanticObject": "Eredivisie",
+        "intentAction": "Display",
+        "html5ApplicationName": "eredivisie20182019",
+        "HCPParentApplicationName": ""
+    },
+    "assignment": {
+        "groups": [
+            "fc3588c9-da2e-42d4-8525-e15d28edc805-1474803716039"
+        ],
+        "contentPackages": [
+            "23e93aa2-73cc-4160-87a9-47c2a5ec8b76-1468147845926"
+        ],
+        "categories": []
+    },
+    "tile": {
+        "type": "StaticTile",
+        "title": "Eredivisie ",
+        "subtitle": "2018/2019",
+        "searchKeywords": "Eredivisie ,2018/2019",
+        "displayIconUrl": "sap-icon://soccor",
+        "displayInfoText": "",
+        "size": "1x1",
+        "serviceURL": "",
+        "refreshInterval": ""
+    }
+}

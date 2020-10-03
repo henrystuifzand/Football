@@ -1,0 +1,37 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core">
+	<Table noDataText="{i18n>NoData}" id="table0"
+		items="{path:'matches>/matches', filters:[{path:'competition/id' , operator:'EQ', value1:'2003'}]}" alternateRowColors="true">
+		<items>
+			<ColumnListItem type="Active" id="item0">
+				<cells>
+					<Text
+						text=" { path:'matches>utcDate', type:'sap.ui.model.type.Date', formatOptions: { source : { pattern: 'yyyy-MM-ddTHH:mm:ss X' }, pattern: 'dd-MM-yyyy' } }"/>
+					<Text text="{matches>homeTeam/name}" id="text8"/>
+					<Text text="{matches>awayTeam/name}" id="text9"/>
+					<Text text="{matches>score/fullTime/homeTeam}-{matches&gt;score/fullTime/awayTeam}" id="text10"/></cells>
+			</ColumnListItem>
+		</items>
+		<columns>
+			<Column>
+				<header>
+					<Label text="Datum"/>
+				</header>
+			</Column>
+			<Column id="column0">
+				<header>
+					<Label text="Thuis" id="label0"/>
+				</header>
+			</Column>
+			<Column id="column1">
+				<header>
+					<Label text="Uit" id="label1"/>
+				</header>
+			</Column>
+			<Column id="column2">
+				<header>
+					<Label text="Uitslag" id="label2"/>
+				</header>
+			</Column>
+		</columns>
+	</Table>
+</core:FragmentDefinition>

@@ -1,0 +1,18 @@
+<mvc:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:html="http://www.w3.org/1999/xhtml"
+	controllerName="nl.henrystuifzand.ed.Eredivisie.controller.Detail">
+	<Page title="{i18n>detailtitle}" showNavButton="true" navButtonPress="onNavBack">
+		<content>
+			<ObjectHeader title="{team>/name}" icon="{team>/crestUrl}" id="__header0"/>
+			<IconTabBar selectedKey="__filter0" id="bar0">
+				<items>
+					<IconTabFilter text="Wedstrijden" id="filter0">
+						<content>
+							<core:Fragment fragmentName="nl.henrystuifzand.ed.Eredivisie.view.matches" type="XML"/>
+						</content>
+					</IconTabFilter>
+					<IconTabFilter text="Spelers" id="filter1"/>
+				</items>
+			</IconTabBar>
+		</content>
+	</Page>
+</mvc:View>

@@ -1,0 +1,65 @@
+<mvc:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:html="http://www.w3.org/1999/xhtml"
+	controllerName="nl.henrystuifzand.ed.Eredivisie.controller.Main">
+	<Page title="{i18n>title}">
+		<content>
+			<Table noDataText="{i18n>NoData}" id="table0" items="{standings>/standings/0/table}" alternateRowColors="true">
+				<items>
+					<ColumnListItem type="Active" id="item0" press=".onItemPress">
+						<cells>
+							<Image src="{standings>team/crestUrl}" width="30px"/>
+							<Text text="{standings>team/name}" width="200px"/>
+							<Text text="{standings>playedGames}"/>
+							<Text text="{standings>points}"/>
+							<Text text="{standings>won}"/>
+							<Text text="{standings>draw}"/>
+							<Text text="{standings>lost}"/>
+							<Text text="{standings>goalsFor}-{standings>goalsAgainst}"/>
+						</cells>
+					</ColumnListItem>
+				</items>
+				<columns>
+					<Column id="column0" width="40px">
+						<header>
+							<Label text="" id="label0"/>
+						</header>
+					</Column>
+					<Column id="column1" hAlign="Left" width="200px">
+						<header>
+							<Label text="" id="label1"/>
+						</header>
+					</Column>
+					<Column id="column2" hAlign="Center">
+						<header>
+							<Label text="Gespeeld" id="label2"/>
+						</header>
+					</Column>
+					<Column id="column3" hAlign="Center">
+						<header>
+							<Label text="Punten" id="label3"/>
+						</header>
+					</Column>
+					<Column id="column4" hAlign="Center">
+						<header>
+							<Label text="Gewonnen" id="label4"/>
+						</header>
+					</Column>
+					<Column id="column5" hAlign="Center">
+						<header>
+							<Label text="Gelijk" id="label5"/>
+						</header>
+					</Column>
+					<Column id="column6" hAlign="Center">
+						<header>
+							<Label text="Verloren" id="label6"/>
+						</header>
+					</Column>
+					<Column id="column7" hAlign="Center">
+						<header>
+							<Label text="Doelsaldo" id="label7"/>
+						</header>
+					</Column>
+				</columns>
+			</Table>
+		</content>
+	</Page>
+</mvc:View>
